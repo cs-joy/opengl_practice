@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property details | KeyNest</title>
+    <link rel="icon" href="/images/logo/logo.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+  </head>
+  <body class="client-page" data-page="browse">
+    <header class="client-header">
+      <div class="client-header__inner">
+        <a href="/" class="client-brand">
+          <img
+            class="brand-logo"
+            src="/images/logo/logo.jpeg"
+            alt="KeyNest logo"
+            width="44"
+            height="44"
+          />
+          <span>KeyNest <span class="client-brand__suffix">Rentals</span></span>
+        </a>
+        <button
+          type="button"
+          class="client-menu-btn"
+          id="client-menu-btn"
+          aria-expanded="false"
+          aria-controls="client-nav"
+          aria-label="Open menu"
+        >
+          <span class="client-menu-btn__bars" aria-hidden="true">
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+          </span>
+        </button>
+        <nav class="client-nav" id="client-nav" aria-label="Client navigation">
+          <a href="/" data-nav="home">Home</a>
+          <a href="/browse.html" data-nav="browse">Browse</a>
+          <a href="/about.html" data-nav="about">About</a>
+          <a href="/contact.html" data-nav="contact">Contact Us</a>
+          <a href="/admin/login.html" data-nav="admin">Admin</a>
+        </nav>
+      </div>
+      <div
+        class="client-nav-overlay"
+        id="client-nav-overlay"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <main class="client-main">
+      <p>
+        <a href="/browse.html" class="btn btn--secondary btn--sm">← Back to browse</a>
+      </p>
+
+      <div id="detail-alert" class="alert alert--error" role="alert"></div>
+
+      <div id="detail-loading" class="loading">Loading property…</div>
+
+      <div id="detail-content" class="detail-layout" hidden>
+        <section aria-labelledby="detail-heading">
+          <div class="detail-hero-visual">
+            <img
+              id="detail-image"
+              class="detail-hero-image"
+              alt=""
+              hidden
+            />
+          </div>
+          <h1 id="detail-heading" class="detail-title"></h1>
+          <p class="detail-meta" id="detail-address"></p>
+          <p class="detail-rent" id="detail-rent"></p>
+          <span id="detail-status" class="badge"></span>
+          <p class="detail-description" id="detail-description"></p>
+        </section>
+
+        <aside
+          class="panel booking-panel"
+          id="booking-panel"
+          aria-labelledby="booking-title"
+        >
+          <div class="panel__header">
+            <h2 class="panel__title" id="booking-title">Request a booking</h2>
+          </div>
+          <div class="panel__body">
+            <div id="booking-alert" class="alert" role="status"></div>
+            <p id="booking-unavailable-msg" class="form-hint" hidden>
+              This property is not available for online booking. Browse other
+              listings or contact the management office.
+            </p>
+            <form id="booking-form">
+              <input type="hidden" name="property_id" id="booking-property-id" />
+              <div class="form-group">
+                <label class="form-label form-label--required" for="guest-name"
+                  >Your name</label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="guest-name"
+                  name="guest_name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="guest-contact"
+                  >Email or phone</label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="guest-contact"
+                  name="guest_contact"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="move-in">Preferred move-in</label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="move-in"
+                  name="preferred_move_in"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="booking-notes">Notes</label>
+                <textarea
+                  class="form-textarea"
+                  id="booking-notes"
+                  name="notes"
+                  rows="3"
+                  placeholder="Optional message to the property manager"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width: 100%">
+                Submit booking request
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="client-footer">
+      Copyright © KeyNest 2026. All rights reserved.
+    </footer>
+
+    <script src="/js/client-common.js"></script>
+    <script src="/js/client-nav.js"></script>
+    <script src="/js/property-detail.js"></script>
+  </body>
+</html>

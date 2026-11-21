@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KeyNest Admin Dashboard — property management analytics"
+    />
+    <title>Dashboard | KeyNest Admin</title>
+    <link rel="icon" href="/images/logo/logo.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar__brand">
+          <img
+            class="brand-logo"
+            src="/images/logo/logo.jpeg"
+            alt="KeyNest logo"
+            width="40"
+            height="40"
+          />
+          <div>
+            <div class="sidebar__title">KeyNest</div>
+            <div class="sidebar__subtitle">Management Suite</div>
+          </div>
+        </div>
+        <nav class="sidebar__nav">
+          <a href="/admin/index.html" class="nav-link" data-nav="dashboard">
+            <span class="nav-link__icon" aria-hidden="true">▣</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="/admin/contacts.html" class="nav-link" data-nav="contacts">
+            <span class="nav-link__icon" aria-hidden="true">✉</span>
+            <span>Messages</span>
+            <span class="nav-link__badge" id="nav-contact-badge" data-count="0"></span>
+          </a>
+          <a href="/admin/properties.html" class="nav-link" data-nav="properties">
+            <span class="nav-link__icon" aria-hidden="true">⌂</span>
+            <span>Properties</span>
+          </a>
+          <a href="/admin/bookings.html" class="nav-link" data-nav="bookings">
+            <span class="nav-link__icon" aria-hidden="true">📋</span>
+            <span>Bookings</span>
+          </a>
+          <a href="/admin/tenants.html" class="nav-link" data-nav="tenants">
+            <span class="nav-link__icon" aria-hidden="true">👤</span>
+            <span>Tenants</span>
+          </a>
+          <a href="/" class="nav-link" data-nav="public">
+            <span class="nav-link__icon" aria-hidden="true">🌐</span>
+            <span>Client site</span>
+          </a>
+        </nav>
+        <div class="sidebar__footer">
+          <button type="button" id="admin-logout-btn" class="nav-link sidebar__logout">
+            <span class="nav-link__icon" aria-hidden="true">⚙</span>
+            <span>Sign out</span>
+          </button>
+          <div class="sidebar__session" id="admin-session-email">Admin</div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <header class="top-header top-header--dashboard">
+          <div class="top-header__lead">
+            <h1 class="top-header__title">Dashboard</h1>
+            <p class="top-header__greeting" id="header-greeting">Good morning</p>
+          </div>
+          <div class="top-header__search top-header__search--wide">
+            <label class="sr-only" for="global-search">Search properties</label>
+            <input
+              type="search"
+              id="global-search"
+              placeholder="Search properties, address, tenant…"
+              autocomplete="off"
+            />
+          </div>
+          <div class="top-header__profile">
+            <span class="top-header__meta" id="header-date"></span>
+            <div class="top-header__avatar" id="header-avatar" title="Admin">KN</div>
+          </div>
+        </header>
+
+        <main class="page-content">
+          <div id="dashboard-error" class="alert alert--error" role="alert"></div>
+
+          <section class="dashboard-kpi-grid" aria-label="Key performance indicators">
+            <article class="kpi-card">
+              <p class="kpi-card__label">Total earnings (occupied)</p>
+              <div class="kpi-card__row">
+                <p class="kpi-card__value" id="kpi-earnings">—</p>
+                <span class="kpi-card__trend kpi-card__trend--flat" id="kpi-earnings-trend">—</span>
+              </div>
+              <p class="kpi-card__caption" id="kpi-earnings-caption"></p>
+            </article>
+            <article class="kpi-card">
+              <p class="kpi-card__label">Units occupied</p>
+              <div class="kpi-card__row">
+                <p class="kpi-card__value" id="kpi-occupied">—</p>
+                <span class="kpi-card__trend kpi-card__trend--flat" id="kpi-occupied-trend">—</span>
+              </div>
+              <p class="kpi-card__caption" id="kpi-occupied-caption"></p>
+            </article>
+            <article class="kpi-card">
+              <p class="kpi-card__label">Leads (pending)</p>
+              <div class="kpi-card__row">
+                <p class="kpi-card__value" id="kpi-leads">—</p>
+                <span class="kpi-card__trend kpi-card__trend--flat" id="kpi-leads-trend">—</span>
+              </div>
+              <p class="kpi-card__caption" id="kpi-leads-caption"></p>
+            </article>
+            <article class="kpi-card">
+              <p class="kpi-card__label">Total clients</p>
+              <div class="kpi-card__row">
+                <p class="kpi-card__value" id="kpi-clients">—</p>
+                <span class="kpi-card__trend kpi-card__trend--flat" id="kpi-clients-trend">—</span>
+              </div>
+              <p class="kpi-card__caption" id="kpi-clients-caption"></p>
+            </article>
+          </section>
+
+          <section class="dashboard-analytics" aria-label="Analytics">
+            <article class="analytics-card">
+              <div class="analytics-card__head">
+                <h2 class="analytics-card__title">Booking report</h2>
+                <span class="top-header__meta">Last 12 months</span>
+              </div>
+              <div class="analytics-card__body">
+                <div id="booking-line-chart"></div>
+                <div class="line-chart-legend" id="booking-line-legend"></div>
+              </div>
+            </article>
+            <article class="analytics-card">
+              <div class="analytics-card__head">
+                <h2 class="analytics-card__title">Property status</h2>
+              </div>
+              <div class="analytics-card__body">
+                <div class="status-stack" id="status-mix"></div>
+              </div>
+            </article>
+          </section>
+
+          <section class="analytics-card property-board" aria-labelledby="property-board-title">
+            <div class="property-board__toolbar">
+              <h2 class="analytics-card__title" id="property-board-title">Property overview</h2>
+              <div class="property-board__search">
+                <label class="sr-only" for="property-table-search">Filter table</label>
+                <input
+                  type="search"
+                  id="property-table-search"
+                  placeholder="Search here…"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="property-table-wrap">
+              <table class="property-table">
+                <thead>
+                  <tr>
+                    <th>Owner / resident</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Rent</th>
+                    <th>Property name</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-properties-body"></tbody>
+              </table>
+              <p class="empty-state" id="dashboard-properties-empty" hidden>
+                No properties match your search.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/admin-auth.js"></script>
+    <script src="/js/admin-chrome.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

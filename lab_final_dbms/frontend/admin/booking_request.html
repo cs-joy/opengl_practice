@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings | KeyNest Admin</title>
+    <link rel="icon" href="/images/logo/logo.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="bookings">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar__brand">
+          <img
+            class="brand-logo"
+            src="/images/logo/logo.jpeg"
+            alt="KeyNest logo"
+            width="40"
+            height="40"
+          />
+          <div>
+            <div class="sidebar__title">KeyNest</div>
+            <div class="sidebar__subtitle">Management Suite</div>
+          </div>
+        </div>
+        <nav class="sidebar__nav">
+          <a href="/admin/index.html" class="nav-link" data-nav="dashboard">
+            <span class="nav-link__icon" aria-hidden="true">▣</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="/admin/contacts.html" class="nav-link" data-nav="contacts">
+            <span class="nav-link__icon" aria-hidden="true">✉</span>
+            <span>Messages</span>
+            <span class="nav-link__badge" id="nav-contact-badge" data-count="0"></span>
+          </a>
+          <a href="/admin/properties.html" class="nav-link" data-nav="properties">
+            <span class="nav-link__icon" aria-hidden="true">⌂</span>
+            <span>Properties</span>
+          </a>
+          <a href="/admin/bookings.html" class="nav-link" data-nav="bookings">
+            <span class="nav-link__icon" aria-hidden="true">📋</span>
+            <span>Bookings</span>
+          </a>
+          <a href="/admin/tenants.html" class="nav-link" data-nav="tenants">
+            <span class="nav-link__icon" aria-hidden="true">👤</span>
+            <span>Tenants</span>
+          </a>
+          <a href="/" class="nav-link" data-nav="public">
+            <span class="nav-link__icon" aria-hidden="true">🌐</span>
+            <span>Client site</span>
+          </a>
+        </nav>
+        <div class="sidebar__footer">
+          <button type="button" id="admin-logout-btn" class="nav-link sidebar__logout">
+            <span class="nav-link__icon" aria-hidden="true">⚙</span>
+            <span>Sign out</span>
+          </button>
+          <div class="sidebar__session" id="admin-session-email">Admin</div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <header class="top-header">
+          <h1 class="top-header__title">Booking requests</h1>
+          <span class="top-header__meta" id="header-date"></span>
+        </header>
+
+        <main class="page-content">
+          <section class="panel">
+            <div class="panel__header">
+              <h2 class="panel__title">Client booking requests</h2>
+            </div>
+            <div class="panel__body table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Property</th>
+                    <th scope="col">Guest</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Move-in</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="bookings-table-body">
+                  <tr>
+                    <td colspan="7" class="loading">Loading…</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/admin-auth.js"></script>
+    <script src="/js/admin-chrome.js"></script>
+    <script src="/js/bookings.js"></script>
+  </body>
+</html>

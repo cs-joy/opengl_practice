@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KeyNest — discover rental homes across Bangladesh. Browse listings, book online."
+    />
+    <title>Home | KeyNest Rentals</title>
+    <link rel="icon" href="/images/logo/logo.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+  </head>
+  <body class="client-page" data-page="home">
+    <header class="client-header">
+      <div class="client-header__inner">
+        <a href="/" class="client-brand">
+          <img
+            class="brand-logo"
+            src="/images/logo/logo.jpeg"
+            alt="KeyNest logo"
+            width="44"
+            height="44"
+          />
+          <span>KeyNest <span class="client-brand__suffix">Rentals</span></span>
+        </a>
+        <button
+          type="button"
+          class="client-menu-btn"
+          id="client-menu-btn"
+          aria-expanded="false"
+          aria-controls="client-nav"
+          aria-label="Open menu"
+        >
+          <span class="client-menu-btn__bars" aria-hidden="true">
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+          </span>
+        </button>
+        <nav class="client-nav" id="client-nav" aria-label="Client navigation">
+          <a href="/" data-nav="home">Home</a>
+          <a href="/browse.html" data-nav="browse">Browse</a>
+          <a href="/about.html" data-nav="about">About</a>
+          <a href="/contact.html" data-nav="contact">Contact Us</a>
+          <a href="/admin/login.html" data-nav="admin">Admin</a>
+        </nav>
+      </div>
+      <div
+        class="client-nav-overlay"
+        id="client-nav-overlay"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <section class="home-hero" aria-label="Welcome">
+      <div class="home-hero__bg-motion" aria-hidden="true">
+        <span class="home-hero__blob home-hero__blob--1"></span>
+        <span class="home-hero__blob home-hero__blob--2"></span>
+      </div>
+      <div class="home-hero__inner home-hero__layout">
+        <div class="home-hero__content">
+          <p class="home-hero__eyebrow">Property rentals, simplified</p>
+          <h1>Welcome to KeyNest</h1>
+          <p class="home-hero__lead">
+            Your trusted place to discover quality homes in Dhaka, Chittagong, Sylhet, and
+            beyond. Search listings, compare rent, and send booking requests in a few clicks.
+          </p>
+          <div class="home-hero__actions">
+            <a href="/browse.html" class="btn btn--primary btn--hero">Browse properties</a>
+            <a href="/contact.html" class="btn btn--secondary btn--hero">Contact us</a>
+          </div>
+          <dl class="home-hero__stats">
+            <div>
+              <dt>Listings live</dt>
+              <dd id="home-listing-count">—</dd>
+            </div>
+            <div>
+              <dt>Online booking</dt>
+              <dd>Yes</dd>
+            </div>
+            <div>
+              <dt>Support</dt>
+              <dd>7 days</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div
+          class="hero-carousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Rental highlights"
+        >
+          <div class="hero-carousel__slides">
+            <figure class="hero-carousel__slide is-active">
+              <img
+                src="/images/pr1.jpg"
+                alt="Sample apartment listing"
+                width="800"
+                height="600"
+                decoding="async"
+                fetchpriority="high"
+              />
+              <figcaption>City apartments with modern comfort</figcaption>
+            </figure>
+            <figure class="hero-carousel__slide">
+              <img
+                src="/images/pr2.jpg"
+                alt="Sample family home listing"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Spacious homes near parks &amp; schools</figcaption>
+            </figure>
+            <figure class="hero-carousel__slide">
+              <img
+                src="/images/pr3.webp"
+                alt="Sample lakeside property"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Peaceful lakeside living</figcaption>
+            </figure>
+          </div>
+          <div class="hero-carousel__dots" aria-hidden="true">
+            <span class="hero-carousel__dot is-active"></span>
+            <span class="hero-carousel__dot"></span>
+            <span class="hero-carousel__dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="client-main home-main">
+      <section class="home-features" aria-labelledby="home-features-title">
+        <h2 id="home-features-title" class="home-section-title">Why KeyNest</h2>
+        <div class="home-features__grid">
+          <article class="home-feature-card">
+            <span class="home-feature-card__icon" aria-hidden="true">⌂</span>
+            <h3>Verified listings</h3>
+            <p>
+              Every unit is managed through our admin panel with photos, rent, and live
+              availability status.
+            </p>
+          </article>
+          <article class="home-feature-card">
+            <span class="home-feature-card__icon" aria-hidden="true">🔍</span>
+            <h3>Smart search</h3>
+            <p>
+              Filter by keyword and budget on the browse page to find the right home for your
+              family.
+            </p>
+          </article>
+          <article class="home-feature-card">
+            <span class="home-feature-card__icon" aria-hidden="true">✓</span>
+            <h3>Easy booking</h3>
+            <p>
+              Submit a booking request online. Our team reviews and confirms through the
+              dashboard.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-featured" aria-labelledby="home-featured-title">
+        <div class="client-section-head">
+          <h2 id="home-featured-title" class="home-section-title">Featured listings</h2>
+          <a href="/browse.html" class="btn btn--secondary btn--sm">View all</a>
+        </div>
+        <div id="home-featured-grid" class="property-grid">
+          <p class="loading" style="grid-column: 1 / -1">Loading featured homes…</p>
+        </div>
+      </section>
+
+      <section class="home-cta panel">
+        <div class="panel__body home-cta__body">
+          <h2>Ready to move in?</h2>
+          <p>Explore the full catalog or reach out if you need help choosing a property.</p>
+          <a href="/browse.html" class="btn btn--primary">Start browsing</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="client-footer">
+      Copyright © KeyNest 2026. All rights reserved.
+    </footer>
+
+    <script src="/js/client-common.js"></script>
+    <script src="/js/client-nav.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

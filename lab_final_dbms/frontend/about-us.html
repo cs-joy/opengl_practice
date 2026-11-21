@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | KeyNest</title>
+    <link rel="icon" href="/images/logo/logo.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+  </head>
+  <body class="client-page" data-page="about">
+    <header class="client-header">
+      <div class="client-header__inner">
+        <a href="/" class="client-brand">
+          <img
+            class="brand-logo"
+            src="/images/logo/logo.jpeg"
+            alt="KeyNest logo"
+            width="44"
+            height="44"
+          />
+          <span>KeyNest <span class="client-brand__suffix">Rentals</span></span>
+        </a>
+        <button
+          type="button"
+          class="client-menu-btn"
+          id="client-menu-btn"
+          aria-expanded="false"
+          aria-controls="client-nav"
+          aria-label="Open menu"
+        >
+          <span class="client-menu-btn__bars" aria-hidden="true">
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+          </span>
+        </button>
+        <nav class="client-nav" id="client-nav" aria-label="Client navigation">
+          <a href="/" data-nav="home">Home</a>
+          <a href="/browse.html" data-nav="browse">Browse</a>
+          <a href="/about.html" data-nav="about">About</a>
+          <a href="/contact.html" data-nav="contact">Contact Us</a>
+          <a href="/admin/login.html" data-nav="admin">Admin</a>
+        </nav>
+      </div>
+      <div
+        class="client-nav-overlay"
+        id="client-nav-overlay"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <main class="client-main client-page-main">
+      <h1 class="client-page-title">About KeyNest</h1>
+      <section class="panel about-panel">
+        <div class="panel__body">
+          <p>
+            <strong>KeyNest</strong> is a property management platform that connects renters with
+            quality homes across Bangladesh. Browse listings, view details and photos, and request
+            bookings online — our team confirms every request through the admin dashboard.
+          </p>
+          <p>
+            This project is a BSc Computer Science &amp; Engineering lab MVP: a public client
+            portal (vanilla HTML, CSS, JavaScript) with a separate secured admin panel and MySQL
+            backend.
+          </p>
+          <p>
+            <a href="/browse.html" class="btn btn--primary btn--sm">Browse properties</a>
+            <a href="/contact.html" class="btn btn--secondary btn--sm">Contact us</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="client-footer">
+      Copyright © KeyNest 2026. All rights reserved.
+    </footer>
+
+    <script src="/js/client-nav.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | KeyNest</title>
+    <link rel="icon" href="/images/logo/logo.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+  </head>
+  <body class="client-page" data-page="contact">
+    <header class="client-header">
+      <div class="client-header__inner">
+        <a href="/" class="client-brand">
+          <img
+            class="brand-logo"
+            src="/images/logo/logo.jpeg"
+            alt="KeyNest logo"
+            width="44"
+            height="44"
+          />
+          <span>KeyNest <span class="client-brand__suffix">Rentals</span></span>
+        </a>
+        <button
+          type="button"
+          class="client-menu-btn"
+          id="client-menu-btn"
+          aria-expanded="false"
+          aria-controls="client-nav"
+          aria-label="Open menu"
+        >
+          <span class="client-menu-btn__bars" aria-hidden="true">
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+            <span class="client-menu-btn__bar"></span>
+          </span>
+        </button>
+        <nav class="client-nav" id="client-nav" aria-label="Client navigation">
+          <a href="/" data-nav="home">Home</a>
+          <a href="/browse.html" data-nav="browse">Browse</a>
+          <a href="/about.html" data-nav="about">About</a>
+          <a href="/contact.html" data-nav="contact">Contact Us</a>
+          <a href="/admin/login.html" data-nav="admin">Admin</a>
+        </nav>
+      </div>
+      <div
+        class="client-nav-overlay"
+        id="client-nav-overlay"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <main class="client-main client-page-main">
+      <h1 class="client-page-title">Contact Us</h1>
+      <p class="client-page-intro">
+        Questions about a listing or booking? Reach the KeyNest team using the details below
+        or send us a message.
+      </p>
+
+      <div class="client-two-col">
+        <section class="panel" aria-labelledby="contact-info-title">
+          <div class="panel__header">
+            <h2 class="panel__title" id="contact-info-title">Office</h2>
+          </div>
+          <div class="panel__body contact-info">
+            <p><strong>Address</strong><br />12 Riverside Ave, Dhaka 1200</p>
+            <p><strong>Phone</strong><br /><a href="tel:+8801712345678">+880 1712 345678</a></p>
+            <p><strong>Email</strong><br /><a href="mailto:hello@keynest.local">hello@keynest.local</a></p>
+            <p><strong>Hours</strong><br />Sun – Thu, 9:00 AM – 6:00 PM</p>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="contact-form-title">
+          <div class="panel__header">
+            <h2 class="panel__title" id="contact-form-title">Send a message</h2>
+          </div>
+          <div class="panel__body">
+            <div id="contact-alert" class="alert" role="status"></div>
+            <form id="contact-form">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="contact-name">Name</label>
+                <input class="form-input" type="text" id="contact-name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="contact-email">Email</label>
+                <input class="form-input" type="email" id="contact-email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="contact-message">Message</label>
+                <textarea
+                  class="form-textarea"
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  required
+                  minlength="10"
+                  maxlength="5000"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary">Send message</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="client-footer">
+      Copyright © KeyNest 2026. All rights reserved.
+    </footer>
+
+    <script src="/js/client-common.js"></script>
+    <script src="/js/client-nav.js"></script>
+    <script src="/js/contact.js"></script>
+  </body>
+</html>
